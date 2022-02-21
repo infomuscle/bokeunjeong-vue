@@ -7,13 +7,12 @@ import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 import axios from 'axios';
 
-axios.get('/api/v1/portfolio')
-    .then(res => {
-        console.log(res.data);
-    })
-    .catch(err => {
-        console.log(err);
-    });
+const response = await axios.get('/api/v1/portfolio');
+const result = response.data
+console.log('와');
+console.log(result);
+console.log(result["introductions"])
+console.log('우');
 
 const app = createApp(Portfolio);
 app.component('About', About);

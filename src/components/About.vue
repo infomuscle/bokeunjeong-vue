@@ -1,10 +1,16 @@
 <template>
-  <p>about</p>
+  <p>about {{ msg }}</p>
 </template>
 
 <script>
 export default {
-  name: "About"
+  name: "About",
+  props: {
+    message: String
+  },
+  data: function () {
+    return {msg: this.message + 'test2'};
+  }
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <About></About>
+  <About message='test1'></About>
   <Skills></Skills>
   <Resume></Resume>
   <Contact></Contact>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "Portfolio"
+  name: "Portfolio",
 }
 </script>
 
