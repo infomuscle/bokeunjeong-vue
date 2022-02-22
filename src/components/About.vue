@@ -23,17 +23,9 @@
             Responsible for Development of Order and Claim Service to Sync with Partner Companies
           </p>
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6" v-for="col in 2">
               <ul>
-                <li v-for="link in even(links)">
-                  <i class="bi bi-chevron-right"></i> <strong>{{ link.title }}:</strong>
-                  <span><a v-bind:href="link.url" target="_blank">{{ link.url }}</a></span>
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-6">
-              <ul>
-                <li v-for="link in odd(links)">
+                <li v-for="link in split(links, col-1)">
                   <i class="bi bi-chevron-right"></i> <strong>{{ link.title }}:</strong>
                   <span><a v-bind:href="link.url" target="_blank">{{ link.url }}</a></span>
                 </li>
@@ -59,11 +51,8 @@ export default {
     introductions: Object
   },
   methods: {
-    even(items) {
-      return items.filter((item, i) => i % 2 === 0)
-    },
-    odd(items) {
-      return items.filter((item, i) => i % 2 === 1)
+    split(items, col) {
+      return items.filter((item, i) => i % 2 === col)
     }
   }
 }
