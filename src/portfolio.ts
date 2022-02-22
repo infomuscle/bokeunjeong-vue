@@ -3,6 +3,7 @@ import Portfolio from './Portfolio.vue'
 import About from './components/About.vue'
 import Skills from './components/Skills.vue'
 import Resume from './components/Resume.vue'
+import ResumeDetail from './components/ResumeDetail.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 import axios from 'axios';
@@ -12,27 +13,28 @@ const result = response.data
 
 console.log(result);
 
-let links = result["links"];
-let introductions = result["introductions"]
-let contacts = result["contacts"]
-
 const app = createApp(Portfolio);
 app.component('About', About);
 app.component('Skills', Skills);
 app.component('Resume', Resume);
+app.component('ResumeDetail', ResumeDetail);
 app.component('Contact', Contact);
 app.component('Footer', Footer);
 
 app.mount('#portfolio');
 
 export function getLinks() {
-    return links;
+    return result["links"];
 }
 
 export function getInroductions() {
-    return introductions;
+    return result["introductions"];
+}
+
+export function getProjects() {
+    return result["projects"];
 }
 
 export function getContacts() {
-    return contacts
+    return result["contacts"];
 }
