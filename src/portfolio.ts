@@ -1,5 +1,6 @@
 import {createApp} from 'vue'
 import Portfolio from './Portfolio.vue'
+import Masthead from './components/Masthead.vue'
 import About from './components/About.vue'
 import Skills from './components/Skills.vue'
 import Resume from './components/Resume.vue'
@@ -16,6 +17,7 @@ console.log(result);
 Skills.methods.group(result["skills"])
 
 const app = createApp(Portfolio);
+app.component('Masthead', Masthead);
 app.component('About', About);
 app.component('Skills', Skills);
 app.component('Resume', Resume);

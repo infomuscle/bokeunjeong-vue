@@ -1,4 +1,5 @@
 <template>
+  <Masthead></Masthead>
   <About v-bind:links="links" v-bind:introductions="introductions"></About>
   <Skills v-bind:skills="skills"></Skills>
   <Resume v-bind:projects="projects"></Resume>
