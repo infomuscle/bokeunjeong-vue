@@ -14,6 +14,7 @@ console.log(result);
 
 let links = result["links"];
 let introductions = result["introductions"]
+let contacts = result["contacts"]
 
 const app = createApp(Portfolio);
 app.component('About', About);
@@ -24,10 +25,14 @@ app.component('Footer', Footer);
 
 app.mount('#portfolio');
 
-export function getLinks(): string {
+export function getLinks() {
     return links;
 }
 
 export function getInroductions() {
     return introductions;
+}
+
+export function getContacts() {
+    return contacts
 }

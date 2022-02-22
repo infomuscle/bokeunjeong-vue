@@ -2,12 +2,12 @@
   <About v-bind:links="links" v-bind:introductions="introductions"></About>
   <Skills></Skills>
   <Resume></Resume>
-  <Contact></Contact>
+  <Contact v-bind:contacts="contacts"></Contact>
   <Footer></Footer>
 </template>
 
 <script>
-import {getInroductions, getLinks} from './portfolio.ts'
+import {getContacts, getInroductions, getLinks} from './portfolio.ts'
 
 export default {
   name: "Portfolio",
@@ -15,7 +15,8 @@ export default {
   data: function () {
     return {
       links: getLinks(),
-      introductions: getInroductions()
+      introductions: getInroductions(),
+      contacts: getContacts()
     }
   }
 }
