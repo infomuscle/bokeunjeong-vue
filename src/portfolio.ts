@@ -13,6 +13,8 @@ const result = response.data
 
 console.log(result);
 
+Skills.methods.group(result["skills"])
+
 const app = createApp(Portfolio);
 app.component('About', About);
 app.component('Skills', Skills);
