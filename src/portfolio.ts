@@ -31,6 +31,10 @@ export function getInroductions() {
     return result["introductions"];
 }
 
+export function getSkills() {
+    return result["skills"];
+}
+
 export function getProjects() {
     return result["projects"];
 }
