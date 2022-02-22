@@ -9,10 +9,11 @@ import axios from 'axios';
 
 const response = await axios.get('/api/v1/portfolio');
 const result = response.data
-console.log('와');
+
 console.log(result);
-console.log(result["introductions"])
-console.log('우');
+
+let links = result["links"];
+let introductions = result["introductions"]
 
 const app = createApp(Portfolio);
 app.component('About', About);
@@ -22,3 +23,11 @@ app.component('Contact', Contact);
 app.component('Footer', Footer);
 
 app.mount('#portfolio');
+
+export function getLinks(): string {
+    return links;
+}
+
+export function getInroductions() {
+    return introductions;
+}
