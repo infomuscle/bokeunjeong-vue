@@ -10,7 +10,7 @@
 
       <div class="row">
         <div class="col-lg-4">
-          <img src="img/profile-img.jpeg" class="img-fluid" alt="">
+          <img src="../assets/img/profile-img.jpeg" class="img-fluid" alt="">
           <div class="text-center my-3">
             <a href="resume_bokeunjeong.pdf" download>
               <button id="button-resume">Resume</button>
