@@ -2,7 +2,7 @@
   <footer id="footer">
     <div class="container">
       <h3>Bokeun Aaron Jeong</h3>
-      <p>This Website is based on Java, Spring Boot, MySQL, JPA, Docker, AWS, Git.</p>
+      <p>This Website is based on Java, Spring Boot, MySQL, JPA, Vue.js, Docker, AWS, Git.</p>
       <div class="social-links">
         <a href="https://www.instagram.com/i.m.archive" class="instagram" target="_blank"><i
             class="bx bxl-instagram"></i></a>
