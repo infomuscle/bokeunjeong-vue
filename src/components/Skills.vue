@@ -10,7 +10,7 @@
           <h4>{{ type }}</h4>
           <div class="progress" v-for="skill in skills">
             <span class="skill">{{ skill.name }}
-            <i class="val p{{skill.proficiency}}" data-bs-toggle="tooltip" data-bs-placement="top"
+            <i v-bind:class="'val p' + skill.proficiency" data-bs-toggle="tooltip" data-bs-placement="top"
                v-bind:title="skill.detail">{{ skill.proficiency }}</i>
             </span>
           </div>
