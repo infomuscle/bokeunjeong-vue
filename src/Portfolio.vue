@@ -23,7 +23,12 @@ export default {
     }
   },
   mounted() {
-    import('./assets/js/main');
+    import('./assets/js/main').then(() => {
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+    });
   }
 }
 </script>
