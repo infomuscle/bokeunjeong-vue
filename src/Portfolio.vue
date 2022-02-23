@@ -1,9 +1,11 @@
 <template>
   <Masthead></Masthead>
-  <About v-bind:links="links" v-bind:introductions="introductions"></About>
-  <Skills v-bind:skills="skills"></Skills>
-  <Resume v-bind:projects="projects"></Resume>
-  <Contact v-bind:contacts="contacts"></Contact>
+  <main id="main">
+    <About v-bind:links="links" v-bind:introductions="introductions"></About>
+    <Skills v-bind:skills="skills"></Skills>
+    <Resume v-bind:projects="projects"></Resume>
+    <Contact v-bind:contacts="contacts"></Contact>
+  </main>
   <Footer></Footer>
 </template>
 
