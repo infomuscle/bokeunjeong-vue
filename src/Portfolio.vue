@@ -21,6 +21,9 @@ export default {
       contacts: getContacts(),
       skills: getSkills()
     }
+  },
+  mounted() {
+    import('./assets/js/main');
   }
 }
 </script>
