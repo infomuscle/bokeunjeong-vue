@@ -6,7 +6,7 @@
     <ul>
       <li v-for="detail in project.details">{{ detail }}</li>
     </ul>
-    <p><i class="bi bi-chevron-right"></i><a v-bind:href="project.url" target="_blank">{{ project.url }}</a></p>
+    <p v-if="project.url != null"><i class="bi bi-chevron-right"></i><a v-bind:href="project.url" target="_blank">{{ project.url }}</a></p>
   </div>
 </template>
 
