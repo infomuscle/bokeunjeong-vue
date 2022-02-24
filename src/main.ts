@@ -9,11 +9,10 @@ import Footer from './components/Footer.vue'
 import App from './App.vue'
 import axios from 'axios';
 import router from "./router";
-
+import BootstrapVue from "bootstrap-vue";
 
 const response = await axios.get('/api/v1/portfolio');
 const result = response.data
-
 console.log(result);
 
 const app = createApp(App);
@@ -25,7 +24,7 @@ app.component('ResumeDetail', ResumeDetail);
 app.component('Contact', Contact);
 app.component('Footer', Footer);
 
-app.use(router).mount('#app');
+app.use(router, BootstrapVue).mount('#app');
 
 
 export function getLinks() {

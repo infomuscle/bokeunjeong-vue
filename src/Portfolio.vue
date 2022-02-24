@@ -22,7 +22,7 @@
   </main>
   <Footer></Footer>
 
-  <!--    <div id="preloader"></div>-->
+  <!--  <div id="preloader"></div>-->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 </template>
@@ -31,8 +31,7 @@
 import {getContacts, getInroductions, getLinks, getProjects, getSkills} from './main.ts';
 import AOS from "aos";
 
-AOS.init()
-
+AOS.init();
 
 export default {
   name: "Portfolio",
@@ -51,14 +50,15 @@ export default {
   created() {
   },
   beforeMount() {
+
   },
   mounted() {
-    import('./assets/js/main').finally(() => {
-      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-      });
-    });
+    // import('./assets/js/main').finally(() => {
+    //   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    //   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    //     return new bootstrap.Tooltip(tooltipTriggerEl)
+    //   });
+    // });
   },
   beforeUpdate() {
   },
