@@ -6,16 +6,15 @@ import Resume from './components/Resume.vue'
 import ResumeDetail from './components/ResumeDetail.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
-import App from './App.vue'
+import Portfolio from './Portfolio.vue'
 import axios from 'axios';
-import router from "./router";
 
 const response = await axios.get('/api/v1/portfolio');
 const result = response.data
 
 console.log(result);
 
-const app = createApp(App);
+const app = createApp(Portfolio);
 app.component('Masthead', Masthead);
 app.component('About', About);
 app.component('Skills', Skills);
@@ -24,7 +23,7 @@ app.component('ResumeDetail', ResumeDetail);
 app.component('Contact', Contact);
 app.component('Footer', Footer);
 
-app.use(router).mount('#app');
+app.mount('#portfolio');
 
 
 export function getLinks() {
