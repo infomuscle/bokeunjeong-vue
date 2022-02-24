@@ -4,13 +4,12 @@ import DocumentationIcon from './icons/IconDocumentation.vue'
 import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
-</script>
+import SupportIcon from './icons/IconSupport.vue'</script>
 
 <template>
   <WelcomeItem>
     <template #icon>
-      <DocumentationIcon />
+      <DocumentationIcon/>
     </template>
     <template #heading>Documentation</template>
 
@@ -21,7 +20,7 @@ import SupportIcon from './icons/IconSupport.vue'
 
   <WelcomeItem>
     <template #icon>
-      <ToolingIcon />
+      <ToolingIcon/>
     </template>
     <template #heading>Tooling</template>
 
@@ -32,17 +31,17 @@ import SupportIcon from './icons/IconSupport.vue'
     your components and web pages, check out
     <a href="https://www.cypress.io/" target="_blank">Cypress</a> and
     <a href="https://docs.cypress.io/guides/component-testing/introduction" target="_blank"
-      >Cypress Component Testing</a
+    >Cypress Component Testing</a
     >.
 
-    <br />
+    <br/>
 
     More instructions are available in <code>README.md</code>.
   </WelcomeItem>
 
   <WelcomeItem>
     <template #icon>
-      <EcosystemIcon />
+      <EcosystemIcon/>
     </template>
     <template #heading>Ecosystem</template>
 
@@ -58,7 +57,7 @@ import SupportIcon from './icons/IconSupport.vue'
 
   <WelcomeItem>
     <template #icon>
-      <CommunityIcon />
+      <CommunityIcon/>
     </template>
     <template #heading>Community</template>
 
@@ -73,7 +72,7 @@ import SupportIcon from './icons/IconSupport.vue'
 
   <WelcomeItem>
     <template #icon>
-      <SupportIcon />
+      <SupportIcon/>
     </template>
     <template #heading>Support Vue</template>
 
