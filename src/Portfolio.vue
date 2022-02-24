@@ -22,21 +22,14 @@
   </main>
   <Footer></Footer>
 
-<!--  <div id="preloader"></div>-->
+  <!--  <div id="preloader"></div>-->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 </template>
 
 <script>
 import {getContacts, getInroductions, getLinks, getProjects, getSkills} from './main.ts';
-// import {Typed} from "@/assets/vendor/typed.js/typed.min";
 
-// import Masthead from './components/Masthead.vue';
-// import About from './components/About.vue';
-// import Skills from './components/Skills.vue';
-// import Resume from './components/Resume.vue';
-// import ResumeDetail from './components/ResumeDetail.vue';
-// import Contact from './components/Contact.vue';
 
 export default {
   name: "Portfolio",
@@ -57,22 +50,12 @@ export default {
   beforeMount() {
   },
   mounted() {
-    import('./assets/vendor/aos/aos');
-    import('./assets/vendor/bootstrap/js/bootstrap.bundle.min');
-    import('./assets/vendor/glightbox/js/glightbox.min');
-    import('./assets/vendor/isotope-layout/isotope.pkgd.min');
-    import('./assets/vendor/php-email-form/validate');
-    import('./assets/vendor/purecounter/purecounter');
-    import('./assets/vendor/swiper/swiper-bundle.min');
-    import('./assets/vendor/typed.js/typed.min');
-    import('./assets/vendor/waypoints/noframework.waypoints');
-
-    import('./assets/js/main').finally(() => {
-      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-      });
-    });
+    // import('./assets/js/main').finally(() => {
+    //   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    //   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    //     return new bootstrap.Tooltip(tooltipTriggerEl)
+    //   });
+    // });
   },
   beforeUpdate() {
   },
