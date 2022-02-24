@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import {getContacts, getInroductions, getLinks, getProjects, getSkills} from './portfolio.ts';
+import {getContacts, getInroductions, getLinks, getProjects, getSkills} from './main.ts';
 // import {Typed} from "@/assets/vendor/typed.js/typed.min";
 
 // import Masthead from './components/Masthead.vue';
