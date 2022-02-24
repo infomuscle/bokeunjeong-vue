@@ -1,4 +1,5 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
+import router from "./router"; // 추가
 import App from './App.vue'
 
-createApp(App).mount('#app')
+createApp(App).use(router).mount("#app"); // .use(router) 추가
