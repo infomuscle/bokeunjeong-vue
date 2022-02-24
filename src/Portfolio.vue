@@ -22,13 +22,16 @@
   </main>
   <Footer></Footer>
 
-  <!--  <div id="preloader"></div>-->
+  <!--    <div id="preloader"></div>-->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 </template>
 
 <script>
 import {getContacts, getInroductions, getLinks, getProjects, getSkills} from './main.ts';
+import AOS from "aos";
+
+AOS.init()
 
 
 export default {
@@ -50,12 +53,12 @@ export default {
   beforeMount() {
   },
   mounted() {
-    // import('./assets/js/main').finally(() => {
-    //   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    //   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    //     return new bootstrap.Tooltip(tooltipTriggerEl)
-    //   });
-    // });
+    import('./assets/js/main').finally(() => {
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+    });
   },
   beforeUpdate() {
   },
@@ -67,7 +70,7 @@ export default {
 
 <style>
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i';
-/*@import './assets/vendor/aos/aos.css';*/
+@import './assets/vendor/aos/aos.css';
 @import './assets/vendor/bootstrap/css/bootstrap.min.css';
 @import './assets/vendor/bootstrap-icons/bootstrap-icons.css';
 @import './assets/vendor/boxicons/css/boxicons.min.css';
