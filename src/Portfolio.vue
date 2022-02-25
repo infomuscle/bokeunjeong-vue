@@ -54,7 +54,6 @@ export default {
 
   },
   mounted() {
-    import('./assets/vendor/bootstrap/js/bootstrap.bundle.min');
     import('./assets/js/main').finally(() => {
       var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
