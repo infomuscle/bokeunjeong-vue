@@ -19,20 +19,20 @@
         </div>
 
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <form action="/email" method="post" role="form" class="email-form">
+          <form v-on:submit.prevent="send" role="form" class="email-form">
             <div class="row">
               <div class="col-md-6 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" v-model="senderName" required>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" v-model="senderEmail" required>
               </div>
             </div>
             <div class="form-group mt-3">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" v-model="emailSubject" required>
             </div>
             <div class="form-group mt-3">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" v-model="emailMessage" required></textarea>
             </div>
             <div class="my-3">
               <div class="loading">Loading</div>
@@ -53,11 +53,47 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Contact",
   props: {
     contacts: Object,
   },
+  data: function () {
+    return {
+      senderName: "",
+      senderEmail: "",
+      emailSubject: "",
+      emailMessage: "",
+    }
+  },
+  methods: {
+    send() {
+      var request = {
+        "name": this.senderName,
+        "email": this.senderEmail,
+        "subject": this.emailSubject,
+        "message": this.emailMessage,
+      }
+      console.log(request);
+
+      const response = axios.post('/api/v1/portfolio/email', request).then(response => {
+        console.log(response.data);
+
+        document.querySelector('.sent-message').classList.add('d-block');
+        // thisForm.reset();
+      });
+
+      this.clear();
+    },
+    clear() {
+      this.senderName = "";
+      this.senderEmail = "";
+      this.emailSubject = "";
+      this.emailMessage = "";
+    }
+  }
 }
 </script>
 
