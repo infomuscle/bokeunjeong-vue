@@ -22,7 +22,7 @@
   </main>
   <Footer></Footer>
 
-  <!--  <div id="preloader"></div>-->
+  <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 </template>
@@ -32,13 +32,6 @@
 import {getContacts, getInroductions, getLinks, getProjects, getSkills} from './main.ts';
 import AOS from "aos";
 import Typed from "typed.js";
-
-AOS.init({
-  duration: 1500,
-  easing: 'ease-in-out',
-  once: true,
-  mirror: false
-});
 
 export default {
   name: "Portfolio",
@@ -52,24 +45,16 @@ export default {
       skills: getSkills()
     }
   },
-  methods: {
-    select(el, all = false) {
-      el = el.trim();
-      if (all) {
-        return [...document.querySelectorAll(el)];
-      } else {
-        return document.querySelector(el);
-      }
-    },
-  },
-  beforeCreate() {
-  },
   created() {
-  },
-  beforeMount() {
+    AOS.init({
+      duration: 1500,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
   },
   mounted() {
-    const typed = this.select('.typed')
+    const typed = document.querySelector('.typed');
     if (typed) {
       let typed_strings = typed.getAttribute('data-typed-items')
       typed_strings = typed_strings.split(',')
@@ -87,6 +72,11 @@ export default {
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
       });
+
+      let preloader = document.querySelector('#preloader');
+      if (preloader) {
+        preloader.remove()
+      }
     });
   },
   beforeUpdate() {
