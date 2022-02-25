@@ -34,21 +34,11 @@ import AOS from "aos";
 import Typed from "typed.js";
 
 AOS.init({
-  duration: 1000,
+  duration: 1500,
   easing: 'ease-in-out',
   once: true,
   mirror: false
 });
-
-const select = (el, all = false) => {
-  el = el.trim();
-  if (all) {
-    return [...document.querySelectorAll(el)];
-  } else {
-    return document.querySelector(el);
-  }
-};
-
 
 export default {
   name: "Portfolio",
@@ -62,6 +52,16 @@ export default {
       skills: getSkills()
     }
   },
+  methods: {
+    select(el, all = false) {
+      el = el.trim();
+      if (all) {
+        return [...document.querySelectorAll(el)];
+      } else {
+        return document.querySelector(el);
+      }
+    },
+  },
   beforeCreate() {
   },
   created() {
@@ -69,7 +69,7 @@ export default {
   beforeMount() {
   },
   mounted() {
-    const typed = select('.typed')
+    const typed = this.select('.typed')
     if (typed) {
       let typed_strings = typed.getAttribute('data-typed-items')
       typed_strings = typed_strings.split(',')
