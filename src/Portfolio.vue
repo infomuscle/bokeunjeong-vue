@@ -29,6 +29,7 @@
 
 <script>
 import {getContacts, getInroductions, getLinks, getProjects, getSkills} from './main.ts';
+import * as bootstrap from 'bootstrap';
 import AOS from "aos";
 
 AOS.init();
@@ -53,12 +54,13 @@ export default {
 
   },
   mounted() {
-    // import('./assets/js/main').finally(() => {
-    //   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    //   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    //     return new bootstrap.Tooltip(tooltipTriggerEl)
-    //   });
-    // });
+    import('./assets/vendor/bootstrap/js/bootstrap.bundle.min');
+    import('./assets/js/main').finally(() => {
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    });
   },
   beforeUpdate() {
   },
