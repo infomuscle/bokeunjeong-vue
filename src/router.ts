@@ -11,16 +11,6 @@ const routes = [
         name: "Sample",
         component: () => import("./Sample.vue"),
     },
-    {
-        path: "/router/test/1",
-        name: "RouterTest1",
-        component: () => import("./RouterTest1.vue"),
-    },
-    {
-        path: "/router/test/2",
-        name: "RouterTest2",
-        component: () => import("./RouterTest2.vue"),
-    },
 ];
 
 const router = createRouter({

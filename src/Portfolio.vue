@@ -67,7 +67,7 @@ export default {
       });
     }
 
-    import('./assets/js/main').finally(() => {
+    import('./assets/js/portfolio').finally(() => {
       var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
