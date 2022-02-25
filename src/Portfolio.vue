@@ -32,7 +32,12 @@
 import {getContacts, getInroductions, getLinks, getProjects, getSkills} from './main.ts';
 import AOS from "aos";
 
-AOS.init();
+AOS.init({
+  duration: 1000,
+  easing: 'ease-in-out',
+  once: true,
+  mirror: false
+});
 
 export default {
   name: "Portfolio",
@@ -70,5 +75,5 @@ export default {
 </script>
 
 <style>
-
+@import "assets/vendor/aos/aos.css";
 </style>
