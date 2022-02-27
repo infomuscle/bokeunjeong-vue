@@ -32,6 +32,7 @@
 import {getContacts, getInroductions, getLinks, getProjects, getSkills} from './main.ts';
 import AOS from "aos";
 import Typed from "typed.js";
+import {Tooltip} from "bootstrap";
 
 export default {
   name: "Portfolio",
@@ -70,7 +71,7 @@ export default {
     import('./assets/js/portfolio').finally(() => {
       var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
+        return new Tooltip(tooltipTriggerEl);
       });
 
       let preloader = document.querySelector('#preloader');
