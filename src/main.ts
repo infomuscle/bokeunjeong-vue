@@ -11,21 +11,27 @@ import axios from 'axios';
 import router from "./router";
 import BootstrapVue from "bootstrap-vue";
 
-const response = await axios.get('/api/v1/portfolio');
-const result = response.data
-console.log(result);
+let result;
 
-const app = createApp(App);
-app.component('Masthead', Masthead);
-app.component('About', About);
-app.component('Skills', Skills);
-app.component('Resume', Resume);
-app.component('ResumeDetail', ResumeDetail);
-app.component('Contact', Contact);
-app.component('Footer', Footer);
+const main = async () => {
+    await axios.get('/api/v1/portfolio').then((response) => {
+            result = response.data
+            console.log(result);
 
-app.use(router, BootstrapVue).mount('#app');
+            const app = createApp(App);
+            app.component('Masthead', Masthead);
+            app.component('About', About);
+            app.component('Skills', Skills);
+            app.component('Resume', Resume);
+            app.component('ResumeDetail', ResumeDetail);
+            app.component('Contact', Contact);
+            app.component('Footer', Footer);
 
+            app.use(router, BootstrapVue).mount('#app');
+        }
+    );
+}
+main();
 
 export function getLinks() {
     return result["links"];
