@@ -9,7 +9,6 @@ import Footer from './components/Footer.vue'
 import App from './App.vue'
 import axios from 'axios';
 import router from "./router";
-import BootstrapVue from "bootstrap-vue";
 
 let result;
 
@@ -27,7 +26,7 @@ const main = async () => {
             app.component('Contact', Contact);
             app.component('Footer', Footer);
 
-            app.use(router, BootstrapVue).mount('#app');
+            app.use(router).mount('#app');
         }
     );
 }
