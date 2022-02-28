@@ -13,9 +13,12 @@ import router from "./router";
 let result;
 
 const main = async () => {
-    await axios.get('/api/v1/portfolio').then((response) => {
-            result = response.data
-            console.log(result);
+    console.log("?!?!?!");
+    await axios.get('http://bokeunjeong-spring/api/v1/portfolio').then((response) => {
+            console.log("!!!!!!");
+            result = response.data;
+            console.log('bbbbbb');
+            // console.log(result);
 
             const app = createApp(App);
             app.component('Masthead', Masthead);
@@ -28,7 +31,10 @@ const main = async () => {
 
             app.use(router).mount('#app');
         }
-    );
+    ).catch((error) => {
+        console.log("에러");
+        console.log(error);
+    });
 }
 main();
 
