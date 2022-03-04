@@ -13,12 +13,8 @@ import router from "./router";
 let result;
 
 const main = async () => {
-    console.log("?!?!?!");
     await axios.get('http://bokeunjeong-spring/api/v1/portfolio').then((response) => {
-            console.log("!!!!!!");
             result = response.data;
-            console.log('bbbbbb');
-            // console.log(result);
 
             const app = createApp(App);
             app.component('Masthead', Masthead);
