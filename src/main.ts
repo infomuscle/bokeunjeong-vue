@@ -13,7 +13,7 @@ import router from "./router";
 let result;
 
 const main = async () => {
-    await axios.get('http://bokeunjeong-spring/api/v1/portfolio').then((response) => {
+    await axios.get('/api/v1/portfolio').then((response) => {
             result = response.data;
 
             const app = createApp(App);
