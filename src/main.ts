@@ -21,8 +21,6 @@ const main = async () => {
         }
     }).then((response) => {
             result = response.data;
-            console.log("result");
-            console.log(result);
 
             const app = createApp(App);
             app.component('Masthead', Masthead);

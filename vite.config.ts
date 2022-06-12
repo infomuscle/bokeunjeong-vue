@@ -16,7 +16,7 @@ export default defineConfig({
         port: 3000,
         proxy: {
             "/api/v1/portfolio": {
-                target: "http://bokeunjeong-spring:8080",
+                target: "http://localhost:8080",
                 changeOrigin: true,
                 secure: false,
             },
