@@ -13,8 +13,16 @@ import router from "./router";
 let result;
 
 const main = async () => {
-    await axios.get('/api/v1/portfolio').then((response) => {
+    await axios.get('http://bokeunjeong-spring/api/v1/portfolio', {
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'POST, GET, PUT, OPTIONS, DELETE',
+            'Access-Control-Allow-Headers': 'Access-Control-Allow-Methods, Access-Control-Allow-Origin, Origin, Accept, Content-Type',
+        }
+    }).then((response) => {
             result = response.data;
+            console.log("result");
+            console.log(result);
 
             const app = createApp(App);
             app.component('Masthead', Masthead);
