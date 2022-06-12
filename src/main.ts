@@ -13,7 +13,7 @@ import router from "./router";
 let result;
 
 const main = async () => {
-    await axios.get('http://bokeunjeong-spring/api/v1/portfolio', {
+    await axios.get('/api/v1/portfolio', {
         headers: {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'POST, GET, PUT, OPTIONS, DELETE',

@@ -13,6 +13,13 @@ export default defineConfig({
     },
     server: {
         host: true,
-        port: 3000
+        port: 3000,
+        proxy: {
+            "/api/v1/portfolio": {
+                target: "http://localhost:8080",
+                changeOrigin: true,
+                secure: false,
+            },
+        }
     }
 })
