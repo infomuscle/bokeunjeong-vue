@@ -12,7 +12,7 @@
         <div class="col-lg-4">
           <img src="../assets/img/profile-img.jpeg" class="img-fluid" alt="">
           <div class="text-center my-3">
-            <a href="./src/assets/resume_bokeunjeong.pdf" download>
+            <a v-on:click="download()" download>
               <button id="button-resume">Resume</button>
             </a>
           </div>
@@ -53,6 +53,18 @@ export default {
   methods: {
     split(items, col) {
       return items.filter((item, i) => i % 2 === col)
+    },
+    download() {
+      this.$axios.get("api/v1/portfolio/resume", {
+        responseType: 'blob'
+      }).then((response) => {
+        const url = window.URL.createObjectURL(new Blob([response.data], {type: response.headers['content-type']}));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'resume_bokeunjeong.pdf');
+        document.body.appendChild(link);
+        link.click();
+      });
     }
   }
 }

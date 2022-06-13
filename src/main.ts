@@ -31,6 +31,8 @@ const main = async () => {
             app.component('Contact', Contact);
             app.component('Footer', Footer);
 
+            app.config.globalProperties.$axios = axios;
+
             app.use(router).mount('#app');
         }
     ).catch((error) => {
