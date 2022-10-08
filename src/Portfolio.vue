@@ -29,23 +29,25 @@
 
 
 <script>
-import {getContacts, getInroductions, getLinks, getProjects, getSkills} from './main.ts';
+import {getPortfolio} from './main.ts';
 import AOS from "aos";
 import Typed from "typed.js";
 import {Tooltip} from "bootstrap";
+
 
 export default {
   name: "Portfolio",
   props: {},
   data: function () {
     return {
-      links: getLinks(),
-      introductions: getInroductions(),
-      projects: getProjects(),
-      contacts: getContacts(),
-      skills: getSkills()
+      links: getPortfolio()["links"],
+      introductions: getPortfolio()["introductions"],
+      projects: getPortfolio()["projects"],
+      contacts: getPortfolio()["contacts"],
+      skills: getPortfolio()["skills"],
     }
   },
+
   created() {
     AOS.init({
       duration: 1500,
@@ -54,6 +56,7 @@ export default {
       mirror: false
     });
   },
+
   mounted() {
     const typed = document.querySelector('.typed');
     if (typed) {
@@ -80,10 +83,6 @@ export default {
       }
     });
   },
-  beforeUpdate() {
-  },
-  updated() {
-  }
 }
 
 </script>
