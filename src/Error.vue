@@ -18,7 +18,7 @@
                 </svg>
                 <i class="bx bx-tachometer"></i>
               </div>
-              <h4><a href="#">Something went wrong;(</a></h4>
+              <h4><a href="#">Oops, Something went wrong:(</a></h4>
               <p>Sorry, I will try to fix it as soon as possible!</p>
             </div>
           </div>
