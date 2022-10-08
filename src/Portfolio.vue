@@ -14,19 +14,17 @@
   </header>
 
   <Masthead></Masthead>
-  <div v-if="show">
-    <main id="main">
-      <About v-bind:links="links" v-bind:introductions="introductions"></About>
-      <Skills v-bind:skills="skills"></Skills>
-      <Resume v-bind:projects="projects"></Resume>
-      <Contact v-bind:contacts="contacts"></Contact>
-    </main>
-  </div>
+  <main id="main" v-if="show">
+    <About v-bind:links="links" v-bind:introductions="introductions"></About>
+    <Skills v-bind:skills="skills"></Skills>
+    <Resume v-bind:projects="projects"></Resume>
+    <Contact v-bind:contacts="contacts"></Contact>
+  </main>
   <Footer></Footer>
 
-
-  <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader" v-if="!show"></div>
 
 </template>
 
@@ -104,11 +102,6 @@ export default {
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new Tooltip(tooltipTriggerEl);
       });
-
-      let preloader = document.querySelector('#preloader');
-      if (preloader) {
-        preloader.remove()
-      }
     });
   },
 }
