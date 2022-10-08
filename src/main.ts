@@ -10,27 +10,6 @@ import App from './App.vue'
 import axios from 'axios';
 import router from "./router";
 
-let result;
-
-const init = async () => {
-    console.log("DATA!")
-    await axios.get('/api/v1/portfolio', {
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'POST, GET, PUT, OPTIONS, DELETE',
-            'Access-Control-Allow-Headers': 'Access-Control-Allow-Methods, Access-Control-Allow-Origin, Origin, Accept, Content-Type',
-        }
-    }).then((response) => {
-            console.log(response)
-            result = response.data;
-        }
-    ).catch((error) => {
-        console.log("에러!");
-        console.log(error);
-    });
-}
-await init();
-
 const main = () => {
     const app = createApp(App);
     app.component('Masthead', Masthead);
@@ -46,7 +25,3 @@ const main = () => {
     app.use(router).mount('#app');
 }
 main();
-
-export function getPortfolio() {
-    return result;
-}

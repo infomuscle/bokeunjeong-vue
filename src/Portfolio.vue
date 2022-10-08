@@ -1,6 +1,6 @@
 <template>
+
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-  <!-- ======= Header ======= -->
   <header id="header" class="d-flex flex-column justify-content-center">
     <nav id="navbar" class="navbar nav-menu">
       <ul>
@@ -10,17 +10,20 @@
         <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
       </ul>
-    </nav><!-- .nav-menu -->
-  </header><!-- End Header -->
+    </nav>
+  </header>
 
   <Masthead></Masthead>
-  <main id="main">
-    <About v-bind:links="links" v-bind:introductions="introductions"></About>
-    <Skills v-bind:skills="skills"></Skills>
-    <Resume v-bind:projects="projects"></Resume>
-    <Contact v-bind:contacts="contacts"></Contact>
-  </main>
+  <div v-if="show">
+    <main id="main">
+      <About v-bind:links="links" v-bind:introductions="introductions"></About>
+      <Skills v-bind:skills="skills"></Skills>
+      <Resume v-bind:projects="projects"></Resume>
+      <Contact v-bind:contacts="contacts"></Contact>
+    </main>
+  </div>
   <Footer></Footer>
+
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -29,10 +32,10 @@
 
 
 <script>
-import {getPortfolio} from './main.ts';
 import AOS from "aos";
 import Typed from "typed.js";
 import {Tooltip} from "bootstrap";
+import axios from "axios";
 
 
 export default {
@@ -40,15 +43,40 @@ export default {
   props: {},
   data: function () {
     return {
-      links: getPortfolio()["links"],
-      introductions: getPortfolio()["introductions"],
-      projects: getPortfolio()["projects"],
-      contacts: getPortfolio()["contacts"],
-      skills: getPortfolio()["skills"],
+      show: false,
+      links: null,
+      introductions: null,
+      projects: null,
+      contacts: null,
+      skills: null,
+    }
+  },
+
+  methods: {
+    init: async function () {
+      await axios.get('/api/v1/portfolio', {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, GET, PUT, OPTIONS, DELETE',
+          'Access-Control-Allow-Headers': 'Access-Control-Allow-Methods, Access-Control-Allow-Origin, Origin, Accept, Content-Type',
+        }
+      }).then((response) => {
+            this.links = response.data["links"];
+            this.introductions = response.data["introductions"];
+            this.projects = response.data["projects"];
+            this.contacts = response.data["contacts"];
+            this.skills = response.data["skills"];
+            this.show = true;
+          }
+      ).catch((error) => {
+        console.log("에러: " + error);
+        window.location.href = "/error";
+      });
     }
   },
 
   created() {
+    this.init();
     AOS.init({
       duration: 1500,
       easing: 'ease-in-out',
