@@ -30,8 +30,8 @@ export default {
     group(skills) {
       let byCategory = this.groupBy(skills, "category");
       let result = {
-        "Work": this.groupBy(byCategory["Work"], "type"),
-        "Personal": this.groupBy(byCategory["Personal"], "type")
+        "Work": this.groupBy(byCategory["WORK"], "type"),
+        "Personal": this.groupBy(byCategory["PERSONAL"], "type")
       }
       return result;
     },
