@@ -707,7 +707,7 @@ section {
     padding-bottom: 8px;
 }
 
-.contact .email-form .error-message {
+.contact .email-form .fail-message {
     display: none;
     color: #fff;
     background: #ed3c0d;
@@ -716,11 +716,11 @@ section {
     font-weight: 600;
 }
 
-.contact .email-form .error-message br + br {
+.contact .email-form .fail-message br + br {
     margin-top: 25px;
 }
 
-.contact .email-form .sent-message {
+.contact .email-form .success-message {
     display: none;
     color: #fff;
     background: #18d26e;
