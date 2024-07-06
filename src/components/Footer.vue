@@ -4,7 +4,6 @@
       <h3>Bokeun Aaron Jeong</h3>
       <p>This Website is based on Java, Spring Boot, MySQL, JPA, Vue.js, Docker, AWS, Git.</p>
       <div class="social-links">
-        <a href="https://www.instagram.com/i.m.archive" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
         <a href="https://www.linkedin.com/in/infomuscle10" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
         <a href="https://github.com/infomuscle" class="github" target="_blank"><i class="bx bxl-github"></i></a>
       </div>
