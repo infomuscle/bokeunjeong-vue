@@ -1,11 +1,10 @@
 # build stage
-FROM infomuscle10/node as build-stage
+FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
-ADD . .
 RUN npm install
 COPY . .
-RUN npm run build
+RUN yarn build
 
 # production stage
 FROM infomuscle10/nginx as production-stage
