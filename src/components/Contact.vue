@@ -11,7 +11,7 @@
         <div class="col-lg-4">
           <div class="info">
             <div v-bind:class="contact.type" v-for="contact in contacts">
-              <i class="bi bi-geo-alt"></i>
+              <i v-bind:class="contact.icon" class="bi"></i>
               <h4>{{ contact.type }}</h4>
               <p>{{ contact.detail }}</p>
             </div>

@@ -2,10 +2,10 @@
   <footer id="footer">
     <div class="container">
       <h3>Bokeun Aaron Jeong</h3>
-      <p>This Website is based on Java, Spring Boot, MySQL, JPA, Vue.js, Docker, AWS, Git.</p>
+      <p>This Website is based on Spring Boot, PostgreSQL, Vue.js, Docker, GCP</p>
       <div class="social-links">
-        <a href="https://www.linkedin.com/in/infomuscle10" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://github.com/infomuscle" class="github" target="_blank"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/infomuscle10" class="linkedin mx-2" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/infomuscle" class="github mx-2" target="_blank"><i class="bx bxl-github"></i></a>
       </div>
       <div class="copyright">
         &copy; Copyright <strong><span>B.A.Jeong</span></strong>. All Rights Reserved
