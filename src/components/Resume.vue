@@ -14,7 +14,9 @@
             <h4>SSG.COM</h4>
             <h5>Mar 2019 - Present</h5>
             <ul>
-              <li>Order/Claim/Affliation Backend Development</li>
+              <li>Developed integration system for order, claim, product data of affiliated sellers.</li>
+              <li>Designed, Developed, Improved Mobile Gift Service with maximum 85.8M monthly traffics.</li>
+              <li>Maintained data synchronization for Order, Product of H&M, Samsung, Ferragamo.</li>
             </ul>
           </div>
           <div class="resume-item pb-0">
@@ -22,8 +24,8 @@
             <h5>Mar 2010 - Aug 2018</h5>
             <ul>
               <li>Majored in Economics</li>
-              <li>Doubled Majored in Easern Philosophy</li>
-              <li>4-year Full Tuition Scholarship</li>
+              <li>Doubled Majored in Eastern Philosophy</li>
+              <li>Samsung Full Tuition Scholarship</li>
             </ul>
           </div>
 
