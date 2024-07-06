@@ -1,7 +1,7 @@
 <template>
   <div class="resume-item">
     <h4>{{ project.name }}</h4>
-    <h5>{{ project.startAt }} - {{ project.endAt }}</h5>
+    <h5 v-if="project.startAt != null && project.endAt != null">{{ project.startAt }} - {{ project.endAt }}</h5>
     <p><em>{{ project.description }}</em></p>
     <ul>
       <li v-for="detail in project.details">{{ detail }}</li>
